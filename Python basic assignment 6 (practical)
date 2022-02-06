@@ -1,0 +1,106 @@
+Practical python basic assignment 6
+
+1:
+
+
+def fibonnaci_seq(n):
+    
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    else:
+        return fibonnaci_seq(n-1) + fibonnaci_seq(n-2)  
+
+
+
+2:
+
+
+def factorial(n):
+    
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+        
+        
+        
+3:
+
+
+weight = input('Enter your weight (in kg): ')
+height = input('Enter your height (in cms): ')
+
+if ('.' in weight) and ('.' not in height):
+    
+    weight = float(weight)
+    height = int(height)
+    height = height / 100
+    
+    BMI = (weight)/(height ** 2)
+   
+    print('BMI equals to: ',BMI)
+
+elif ('.' in height) and ('.' not in weight):
+    weight = int(weight)
+    height = float(height)
+    height = height/100
+    
+    BMI = (weight)/(height**2)
+    
+    print('BMI equals to: ',BMI)
+
+else:
+    if ('.' in weight) and ('.' in height):
+        
+        weight = float(weight)
+        height = float(height)
+        height = height/100
+        
+        BMI = (weight)/(height**2)
+        
+        print('BMI equals to: ',BMI)
+        
+    else:
+        
+        weight = int(weight)
+        height = int(height)
+        height = height/100
+        
+        BMI = (weight)/(height**2)
+        
+        print('BMI equals to: ',BMI)
+    
+if BMI < 18.5:
+    print('Nutritional status is under weight')
+elif (BMI >= 18.5) and (BMI <= 24.9):
+    print('Nutritional status is normal weight')
+elif (BMI >= 25.0) and (BMI <= 29.9):
+    print('Nutritional status is pre-obesity')
+elif (BMI >= 30.0) and (BMI <= 34.9):
+    print('Nutritional status is obesity class1')
+elif (BMI >= 35.0) and (BMI <= 39.9):
+    print('Nutritional status is obesity class2')
+else:
+    print('Nutritional status is obesity class3')
+
+
+4:
+
+
+num = int(input('Enter any number: '))
+
+print('The natural logarithm of ',num,'is: ',math.log(num))
+
+
+
+5:
+
+
+num = int(input('Enter any number for which you want sum: '))
+
+l = []
+for i in range(1,num+1):
+    l.append(i**3)
+print(sum(l))
